@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3114466097664250482}
   - component: {fileID: 1307751042054808931}
   - component: {fileID: 3563520611592120963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Frite de base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

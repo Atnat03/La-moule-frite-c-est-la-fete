@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7304683699167274750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LameRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2063404048409007576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.206, y: 0.654, z: 0}
+  m_LocalPosition: {x: 0.206, y: 0.654, z: -1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2284393357118383751}
   - component: {fileID: 3692420014032625511}
   - component: {fileID: 7338198044566807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1854478020101862932}
   - component: {fileID: 1426196710616050326}
   - component: {fileID: 7399537264058463611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Manche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 5196163518199136718}
   - component: {fileID: 1195173968640310295}
   - component: {fileID: 5654074099657253534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Koutheau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!65 &1195173968640310295
 BoxCollider:

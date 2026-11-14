@@ -15,8 +15,8 @@ namespace Item
 
         private Vector3 _targetPosition;
         
-        Rigidbody _rigidbody;
-        Camera _camera;
+        protected Rigidbody _rigidbody;
+        protected Camera _camera;
         
         private void Awake()
         {

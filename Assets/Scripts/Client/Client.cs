@@ -109,5 +109,17 @@ namespace Client
 					return type.point;
 			return 0;
 		}
+
+		public float CheckIfItsTheGoodCommand(Commande c)
+		{
+			float r = 0;
+			
+			if (c.Equals(command))
+			{
+				r = command.point;
+			}
+			
+			return r;
+		}
 	}
 }

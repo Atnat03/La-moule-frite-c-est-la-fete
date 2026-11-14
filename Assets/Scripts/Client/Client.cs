@@ -113,6 +113,9 @@ namespace Client
 		public float CheckIfItsTheGoodCommand(Commande c)
 		{
 			float r = 0;
+
+			if (c == null)
+				return r;
 			
 			if (c.Equals(command))
 			{

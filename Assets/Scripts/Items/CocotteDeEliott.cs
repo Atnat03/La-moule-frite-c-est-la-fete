@@ -128,6 +128,7 @@ namespace Item
                 {
                     _elapsedTimeCuisson = _maxCuissonTime;
                     EndCuisson();
+                    return;
                 }
                 
                 _mouleDansLaMarmite = moule;

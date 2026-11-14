@@ -8,10 +8,10 @@ namespace Item
     public class BasePickableItem : MonoBehaviour, IInteractable
     {
         [Header("When pickup")]
-        [SerializeField] private float _lerpSeep;
         [SerializeField] private float _followSpeed = 15f;
         [SerializeField] private float _distanceToCamera = 3f;
-        private bool _isInHand = false;
+        protected bool _isInHand = false;
+        float _fixedZ;
 
         private Vector3 _targetPosition;
         
@@ -22,29 +22,38 @@ namespace Item
         {
             _rigidbody = GetComponent<Rigidbody>();
             _camera = Camera.main;
+            
+            _rigidbody.constraints = RigidbodyConstraints.FreezeRotationY |
+                                     RigidbodyConstraints.FreezeRotationX |
+                                     RigidbodyConstraints.FreezePositionZ;
         }
 
-        public void StartInteract()
+        public virtual void StartInteract()
         {
-            ABPrint.Print("Starting interact");
             _isInHand = true;
             _rigidbody.useGravity = false;
+            _fixedZ = _rigidbody.position.z;
         }
 
-        public void StopInteract()
+        public virtual void StopInteract()
         {
-            ABPrint.Print("Stopping interact");
             _isInHand = false;
             _rigidbody.useGravity = true;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (!_isInHand || !_camera)
                 return;
 
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-            _targetPosition = ray.GetPoint(_distanceToCamera);
+
+            Plane plane = new Plane(Vector3.forward, new Vector3(0, 0, _fixedZ));
+
+            if (plane.Raycast(ray, out float distance))
+            {
+                _targetPosition = ray.GetPoint(distance);
+            }
         }
         
         private void FixedUpdate()
@@ -53,6 +62,7 @@ namespace Item
                 return;
 
             Vector3 direction = _targetPosition - _rigidbody.position;
+
             direction.z = 0;
 
             _rigidbody.linearVelocity = direction * _followSpeed;

@@ -17,13 +17,13 @@
                     "priority": 0
                 },
                 {
-                    "name": "MousePosition",
-                    "type": "Value",
-                    "id": "26d4f0c6-be42-4557-b8c0-7fb1c97501fe",
-                    "expectedControlType": "Vector2",
+                    "name": "SwitchCamera",
+                    "type": "Button",
+                    "id": "d31c67c1-f78b-43f7-8ce7-b9c8f669b3b4",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true,
+                    "initialStateCheck": false,
                     "priority": 0
                 }
             ],
@@ -41,12 +41,12 @@
                 },
                 {
                     "name": "",
-                    "id": "e1250125-c57b-4deb-b11b-aabb4fc6ac46",
-                    "path": "<Mouse>/position",
+                    "id": "4a8c0d42-c65c-4280-81f8-171532f3fde3",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePosition",
+                    "action": "SwitchCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

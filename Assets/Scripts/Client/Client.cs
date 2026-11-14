@@ -118,14 +118,15 @@ namespace Client
 		public float CheckIfItsTheGoodCommand(Commande c)
 		{
 			float r = 0;
-			
+
 			if (c.Equals(command))
 			{
 				r = command.point;
 			}
-			
+
 			return r;
-		
+		}
+
 		private void DisplayCommand()
 		{
 			commandText.text = $"-{command.produitType}\n";

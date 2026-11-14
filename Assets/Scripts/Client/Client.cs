@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Data;
-using NUnit.Framework.Internal;
+using TMPro;
 
 namespace Client
 {
@@ -8,6 +8,8 @@ namespace Client
 	{
 		[SerializeField] private CommandStatistics statistics;
 		[SerializeField] private Commande command = new();
+
+		[SerializeField] private TextMeshProUGUI commandText;
 
 		private void Start()
 		{
@@ -39,6 +41,9 @@ namespace Client
 			
 			// Point
 			CalculatePoint();
+			
+			// UI
+			DisplayCommand();
 		}
 
 		private Produit ChoseProduct()
@@ -80,7 +85,7 @@ namespace Client
 
 			return SauceMoule.Empty;
 		}
-
+		
 		private void CalculatePoint()
 		{
 			command.point += GetProduitPoint(command.produitType, command.sauceFrite == SauceFrite.Empty || command.sauceMoule == SauceMoule.Empty);
@@ -108,6 +113,27 @@ namespace Client
 				if(type.sauceType == sauceType)
 					return type.point;
 			return 0;
+		}
+
+		public float CheckIfItsTheGoodCommand(Commande c)
+		{
+			float r = 0;
+
+			if (c.Equals(command))
+			{
+				r = command.point;
+			}
+
+			return r;
+		}
+
+		private void DisplayCommand()
+		{
+			commandText.text = $"-{command.produitType}\n";
+			if(command.sauceFrite !=  SauceFrite.Empty)
+				commandText.text += $"-{command.sauceFrite}\n";
+			if(command.sauceMoule !=  SauceMoule.Empty)
+				commandText.text += $"-{command.sauceMoule}";
 		}
 	}
 }

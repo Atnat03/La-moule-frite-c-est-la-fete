@@ -17,6 +17,16 @@
                     "priority": 0
                 },
                 {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "ed3fec69-17b7-464b-abfc-4072784258c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "SwitchCamera",
                     "type": "Button",
                     "id": "d31c67c1-f78b-43f7-8ce7-b9c8f669b3b4",
@@ -36,6 +46,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6eb0b9e-8c40-411f-a4c2-9405f797b570",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -31,6 +31,7 @@ namespace Player
         [Header("Game over")]
         [SerializeField] private GameObject _gameOverCanva;
         [SerializeField] private TextMeshProUGUI _scoreGO;
+        [SerializeField] private AudioSource _audioSource;
         
         PlayerInputs _inputs;
 
@@ -91,6 +92,7 @@ namespace Player
         {
             _gameOverCanva.SetActive(true);
             _scoreGO.text = Score.ToString();
+            _audioSource.Play();
         }
 
         public void Replay()

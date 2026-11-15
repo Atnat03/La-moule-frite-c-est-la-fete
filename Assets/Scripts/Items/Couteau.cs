@@ -6,7 +6,6 @@ using UnityEngine;
 public class Couteau : BasePickableItem
 {
     [SerializeField] private Transform _rayStart;
-    private bool alreadyCut = false;
 
     Vector3 startPosition;
     Vector3 direction;
@@ -15,7 +14,7 @@ public class Couteau : BasePickableItem
     {
         base.Update();
         
-        if (!alreadyCut && _isInHand)
+        if (_isInHand)
         {
             startPosition = _rayStart.position;
             direction = _rayStart.forward;
@@ -29,7 +28,6 @@ public class Couteau : BasePickableItem
                 if (hit.transform.TryGetComponent(out Patate patate))
                 {
                     patate.CutCutPatate();
-                    alreadyCut = true;
                 }
             }
         }

@@ -18,7 +18,8 @@ namespace Item
             _playerInputs = new PlayerInputs();
 
             _playerInputs.Gameplay.LeftClick.performed += OnPerformLeftClick;            
-            _playerInputs.Gameplay.LeftClick.canceled += OnCancelLeftClick;            
+            _playerInputs.Gameplay.LeftClick.canceled += OnCancelLeftClick;
+            _playerInputs.Gameplay.CenterClick.performed += OnCenterItem;            
             
             _playerInputs.Enable();
         }
@@ -27,6 +28,7 @@ namespace Item
         {
             _playerInputs.Gameplay.LeftClick.performed -= OnPerformLeftClick;            
             _playerInputs.Gameplay.LeftClick.canceled -= OnCancelLeftClick;  
+            _playerInputs.Gameplay.CenterClick.performed -= OnCenterItem;            
             
             _playerInputs.Disable();
         }
@@ -63,8 +65,19 @@ namespace Item
         
         #endregion
         
-        
-        
+        private void OnCenterItem(InputAction.CallbackContext obj)
+        {
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                _currentTarget = hit.transform;
+                
+                if (_currentTarget.TryGetComponent(out BasePickableItem pickableItem))
+                {
+                    pickableItem.RecentreItem();
+                }
+            }
+        }
         
         public bool HasItemInHand => _currentTarget != null;
 

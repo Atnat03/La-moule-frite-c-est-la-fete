@@ -23,6 +23,8 @@ namespace Player
         public GameObject AlimentInHand;
         
         PlayerInputs _inputs;
+
+        public Transform CenterPos;
         
         void Awake()
         {

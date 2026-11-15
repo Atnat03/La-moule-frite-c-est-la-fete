@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7271449666460269675, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -3195828791156449804, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -58,12 +62,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 230b1a5383d81c047a74fb80dd4e3fc4, type: 2}
     - target: {fileID: 919132149155446097, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
       propertyPath: m_Name
-      value: "SM_Balan\xE7oire"
+      value: "PF_Balan\xE7oire"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502877291743220047, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2355982399387309400, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 230b1a5383d81c047a74fb80dd4e3fc4, type: 2}
+    - target: {fileID: 8485173162082002552, guid: f5ea7bcfc87ec0c468484e470ecb10f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

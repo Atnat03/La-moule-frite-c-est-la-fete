@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2917791263985936362
 Transform:
@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fleur (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6162958110446179638, guid: 415168f644b003b41998f4d42c82f8ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -207,6 +211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fleur (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6162958110446179638, guid: 415168f644b003b41998f4d42c82f8ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -228,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_Name
       value: SM_Sapin (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -306,6 +318,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -441,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plante_Small
       objectReference: {fileID: 0}
+    - target: {fileID: 6036761281348953315, guid: b6d49e21504f5b648a4ace9d694a63ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -462,6 +482,10 @@ PrefabInstance:
     - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_Name
       value: SM_Sapin (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -541,6 +565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Sapin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -619,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_buisson (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -696,6 +728,10 @@ PrefabInstance:
     - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_Name
       value: SM_Sapin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -831,6 +867,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fleur (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6162958110446179638, guid: 415168f644b003b41998f4d42c82f8ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -897,6 +937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blockout
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d671cf4e532a01489fc36345cb75526, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -918,6 +962,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -997,6 +1045,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Sapin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1074,6 +1126,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1153,6 +1209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Sapin
       objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1230,6 +1290,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1309,6 +1373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plante_Big
       objectReference: {fileID: 0}
+    - target: {fileID: 6796433971037160135, guid: 873f4fe0fd8e2e642a1326df485ee390, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7113941890355136898, guid: 873f4fe0fd8e2e642a1326df485ee390, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1382,6 +1450,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1460,6 +1532,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1595,6 +1671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fleur
       objectReference: {fileID: 0}
+    - target: {fileID: 6162958110446179638, guid: 415168f644b003b41998f4d42c82f8ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1616,6 +1696,10 @@ PrefabInstance:
     - target: {fileID: 2686560068483504672, guid: 4d518afc1f8a5ec4ba2a0a082238fcb4, type: 3}
       propertyPath: m_Name
       value: SM_Plante_Mid
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686560068483504672, guid: 4d518afc1f8a5ec4ba2a0a082238fcb4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7065904655126607546, guid: 4d518afc1f8a5ec4ba2a0a082238fcb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1678,6 +1762,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1757,6 +1845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_buisson (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -1834,6 +1926,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -1969,6 +2065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fleur (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6162958110446179638, guid: 415168f644b003b41998f4d42c82f8ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1990,6 +2090,10 @@ PrefabInstance:
     - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_Name
       value: SM_Sapin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -2125,6 +2229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plante_Small (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6036761281348953315, guid: b6d49e21504f5b648a4ace9d694a63ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2146,6 +2254,10 @@ PrefabInstance:
     - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_Name
       value: SM_buisson (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922599366255568738, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6042741918251061026, guid: 153ebda5948d44e46b66d1cf7e00b022, type: 3}
       propertyPath: m_LocalScale.x
@@ -2281,6 +2393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plante_Small (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6036761281348953315, guid: b6d49e21504f5b648a4ace9d694a63ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2302,6 +2418,10 @@ PrefabInstance:
     - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_Name
       value: SM_Sapin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038165033996987408, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7367259834597134360, guid: 4892022a56f0cd6469787dd143a5b9d6, type: 3}
       propertyPath: m_LocalScale.x

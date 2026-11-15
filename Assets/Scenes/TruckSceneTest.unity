@@ -8346,6 +8346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cocote
       objectReference: {fileID: 0}
+    - target: {fileID: 7700470592538818391, guid: 91fd85607196d04478381257bae03ded, type: 3}
+      propertyPath: _throwForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

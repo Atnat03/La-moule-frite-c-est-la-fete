@@ -79,10 +79,11 @@ namespace Item
                 
                 Rigidbody rb = _mouleDansLaMarmite.GetComponent<Rigidbody>();
                 
-                float r = Random.Range(0, 100);
-                float x = r > 50 ? -_angle : _angle;
+                float direction = Random.Range(0, 2) == 0 ? -1f : 1f;
+
+                Vector3 force = new Vector3(direction * _angle, _throwForce, 0f);
                 
-                rb.AddRelativeForce(Vector3.up * _throwForce + Vector3.right * x, ForceMode.Impulse);
+                rb.AddForce(force, ForceMode.Impulse);
                 rb.AddTorque(Vector3.forward * 50, ForceMode.Impulse);
             }
         }

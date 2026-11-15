@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item.Cocote
   _marmiteParticles: {fileID: 2812615294546701905}
-  _throwForce: 10
+  _throwForce: 5
   _angle: 5
   _posStartDrop: {fileID: 8733588235108279560}
   _maxCuissonTime: 3

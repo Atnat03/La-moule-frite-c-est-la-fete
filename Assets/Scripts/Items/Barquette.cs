@@ -10,6 +10,7 @@ namespace Item
         public Commande Command { get; set; }
         
         private bool _isOnLanceur;
+        private float bonusScore;
 
         private Vector3 _startPosition;
         private Vector3 _direction;
@@ -81,9 +82,13 @@ namespace Item
             if (c.collider.TryGetComponent(out ClientCommand client))
             {
                 float addScore = client.CheckIfItsTheGoodCommand(Command);
-                Player.Player.instance.Score += (int)addScore;
+                Player.Player.instance.Score += (int)addScore + (int)bonusScore;
             }
         }
-        
+
+        public void AddBonusScoreCommande(float bonus)
+        {
+            bonusScore += bonus;
+        }
     }
 }

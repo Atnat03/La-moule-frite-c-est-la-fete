@@ -35,8 +35,7 @@ namespace Item
         }
 
         [ContextMenu("Cuit")]
-        public void Cuit() =>
-            SetNewCuissonState(AlimentCuisson.Cuit);
+        public void Cuit() => SetNewCuissonState(AlimentCuisson.Cuit);
 
         public override void StopInteract()
         {
@@ -54,6 +53,14 @@ namespace Item
                     b.AddProduitToCommande(Produit.Frite);
                     Destroy(gameObject);
                 }
+            }
+        }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Poubelle p))
+            {
+                Destroy(gameObject);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Data;
+using MyPrint;
 using TMPro;
 
 namespace Client
@@ -19,7 +20,7 @@ namespace Client
 		public void Command()
 		{
 			// Produit
-			command.produitType = ChoseProduct();
+			/*command.produitType = ChoseProduct();
 			
 			// Sauce Frite
 			switch (command.produitType)
@@ -38,6 +39,7 @@ namespace Client
 					Debug.LogError($"Unknown produit type: {command.produitType}");
 					break;
 			}
+			*/
 			
 			// Point
 			CalculatePoint();
@@ -118,10 +120,13 @@ namespace Client
 		public float CheckIfItsTheGoodCommand(Commande c)
 		{
 			float r = 0;
-
-			if (c.Equals(command))
+			
+			if(c != null)
 			{
-				r = command.point;
+				if (c.CheckCommand(command))
+				{
+					r = command.point;
+				}
 			}
 
 			return r;

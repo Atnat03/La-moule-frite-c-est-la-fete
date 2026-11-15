@@ -184,7 +184,7 @@ public class Friteuse : MonoBehaviour, IInteractable
 		{
 			rbOther.isKinematic = false;
 			rbOther.AddForce((gameObject.transform.up + offsetExpulsion).normalized  * expulsionForce, ForceMode.Impulse);
-			patate.scoreBonus = bonusRatioAlcool * alcoolAmount;
+			patate.scoreBonus = bonusRatioAlcool * alcoolAmount * 5;
 			alcoolAmount = 0;
 			patate = null;
 		}

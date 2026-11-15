@@ -81,7 +81,7 @@ namespace Item
             if (c.collider.TryGetComponent(out ClientCommand client))
             {
                 float addScore = client.CheckIfItsTheGoodCommand(Command);
-                ABPrint.Print("+ number points : " + addScore);
+                Player.Player.instance.Score += (int)addScore;
             }
         }
         

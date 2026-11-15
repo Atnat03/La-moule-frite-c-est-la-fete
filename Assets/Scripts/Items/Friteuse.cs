@@ -12,11 +12,16 @@ public class Friteuse : MonoBehaviour, IInteractable
 	[SerializeField] private float expulsionForce = 2f;
 	[SerializeField] private CookingTimerBar cookingTimerBar;
 	[SerializeField] private ParticleSystem[] fireVFX;
+	[SerializeField] private AudioSource source;
+	[SerializeField] private AudioClip friteBurned, fireSound;
 	
 	[SerializeField] private float cookingTimeToBurn = 5;
 	[SerializeField] private float cookingTime = 3;
 	[SerializeField] private Vector3 offsetExpulsion = new Vector3(-1f, 0f, 0f);
-	
+	[SerializeField, Range(0, 1)] private float ajoutBarAlcoolParGoutte;
+	[SerializeField, Range(0, 1)] private float maxAlcool = 0.867f;
+
+	private float alcoolAmount;
 	private Rigidbody rbOther;
 	private bool canFry = true;
 	private bool frying;
@@ -44,11 +49,16 @@ public class Friteuse : MonoBehaviour, IInteractable
 			Debug.Log("fire");
 		}
 		onFire = true;
+		alcoolAmount = 0;
 		
 		foreach (var fire in fireVFX)
 		{
 			fire.Play();
 		}
+		source.Stop();
+		source.clip = fireSound;
+		source.loop = true;
+		source.Play();
 	}
 
 	private void OnFireOff()
@@ -59,6 +69,7 @@ public class Friteuse : MonoBehaviour, IInteractable
 		{
 			fire.Stop();
 		}
+		source.Stop();
 	}
 
 	private void Deactivate()
@@ -109,6 +120,10 @@ public class Friteuse : MonoBehaviour, IInteractable
 			Fire();
 			Destroy(other.gameObject);
 		}
+		else if (other.gameObject.CompareTag("Goutte"))
+		{
+			OnGoutte();
+		}
 		else
 		{
 			Debug.Log(other.gameObject.name);
@@ -154,6 +169,10 @@ public class Friteuse : MonoBehaviour, IInteractable
 		patate.SetNewCuissonState(AlimentCuisson.Brulé);
 		OnCooked();
 		Debug.Log("Burned");
+		source.Stop();
+		source.clip = friteBurned;
+		source.loop = false;
+		source.Play();
 	}
 	
 	private void OnCooked()
@@ -167,5 +186,15 @@ public class Friteuse : MonoBehaviour, IInteractable
 			patate = null;
 		}
 	}
+	
+	private void OnGoutte()
+	{
+		alcoolAmount += ajoutBarAlcoolParGoutte;
+		//alcoolBar.AddAlcool(alcoolAmount);
 
+		if (alcoolAmount >= maxAlcool)
+		{
+			Fire();
+		}
+	}
 }

@@ -43,7 +43,9 @@ namespace Item
                 {
                     if (hit.transform.TryGetComponent(out LanceBarquette lanceBarquette))
                     {
-                        transform.position = lanceBarquette.SetTargetOnTheLanceur(transform);
+                        var data = lanceBarquette.SetTargetOnTheLanceur(transform);
+                        transform.position = data.Item1;
+                        transform.rotation = data.Item2;
                         _rigidbody.isKinematic = true;
                         _isOnLanceur = true;
                     }

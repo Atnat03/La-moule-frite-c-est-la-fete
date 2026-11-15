@@ -20,7 +20,8 @@ namespace Item
 
         Transform _currentBarquetteInTheLanceur;
 
-        [Header("Throw")] [SerializeField] private float _maxForce = 50;
+        [Header("Throw")] 
+        [SerializeField] private float _maxForce = 50;
         [SerializeField] private float _forceGainPerSecond = 10f;
         [SerializeField] private float _forceLoosePerSecond = 40f;
         [SerializeField] private float _maxFOVThrow = 90;
@@ -28,7 +29,8 @@ namespace Item
         private bool _isAiming = false;
         private bool _isInFrontLancer = false;
         [SerializeField] private Image _targetImage;
-
+        [SerializeField] private Animator _animator;
+        
         private Camera _camera;
         private Vector3 _baseCameraPosition;
         private float _baseCameraFOV;
@@ -126,6 +128,8 @@ namespace Item
             
             if(_currentBarquetteInTheLanceur == null)
                 return;
+
+            _animator.SetFloat("Throw", 0);
             
             _isAiming = false;
             
@@ -145,7 +149,7 @@ namespace Item
             
             _currentBarquetteInTheLanceur = null;
         }
-
+        
         private void Update()
         {
             if (_isAiming)
@@ -154,6 +158,8 @@ namespace Item
                 
                 _targetImage.gameObject.SetActive(true);
                 _targetImage.rectTransform.position = Input.mousePosition;
+                
+                _animator.SetFloat("Throw", _currentForce / _maxForce);
             }
             else
             {
@@ -170,10 +176,11 @@ namespace Item
                 _camera.fieldOfView = Mathf.Lerp(_baseCameraFOV, _maxFOVThrow, _currentForce / _maxForce);
         }
 
-        public Vector3 SetTargetOnTheLanceur(Transform target)
+        public (Vector3, Quaternion) SetTargetOnTheLanceur(Transform target)
         {
             _currentBarquetteInTheLanceur = target;
-            return _barquettePosition.position;
+            target.parent = _barquettePosition;
+            return (_barquettePosition.position, _barquettePosition.rotation);
         }
     }
 }

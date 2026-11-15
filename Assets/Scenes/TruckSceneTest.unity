@@ -1242,6 +1242,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cocote (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7700470592538818391, guid: 91fd85607196d04478381257bae03ded, type: 3}
+      propertyPath: _angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700470592538818391, guid: 91fd85607196d04478381257bae03ded, type: 3}
+      propertyPath: _throwForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5229,7 +5237,7 @@ MonoBehaviour:
   - {fileID: 1021444758}
   - {fileID: 1898763261}
   - {fileID: 585314518}
-  _timerDeSouleEtIlsSeCassentApres: {x: 5, y: 10}
+  _timerDeSouleEtIlsSeCassentApres: {x: 30, y: 45}
   _damage: 10
 --- !u!1 &1492019277
 GameObject:
@@ -7938,6 +7946,18 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5846192646160670975, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: cookingTime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846192646160670975, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: expulsionForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846192646160670975, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: cookingTimeToBurn
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6038640368652530301, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7981,6 +8001,18 @@ PrefabInstance:
     - target: {fileID: 7378307576747121306, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509594502014389835, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: cookingTime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509594502014389835, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: expulsionForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509594502014389835, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: cookingTimeToBurn
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7699790035968400585, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8351,6 +8383,14 @@ PrefabInstance:
     - target: {fileID: 3754424851943183813, guid: 91fd85607196d04478381257bae03ded, type: 3}
       propertyPath: m_Name
       value: Cocote
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700470592538818391, guid: 91fd85607196d04478381257bae03ded, type: 3}
+      propertyPath: _angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700470592538818391, guid: 91fd85607196d04478381257bae03ded, type: 3}
+      propertyPath: _throwForce
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

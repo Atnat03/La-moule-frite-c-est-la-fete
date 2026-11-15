@@ -31,6 +31,8 @@ namespace Player
         [Header("Game over")]
         [SerializeField] private GameObject _gameOverCanva;
         [SerializeField] private TextMeshProUGUI _scoreGO;
+
+        [SerializeField] private AudioSource source;
         
         PlayerInputs _inputs;
 
@@ -97,6 +99,25 @@ namespace Player
         {
             string s = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(s);
+        }
+
+        public void PlaySound(AudioClip clip)
+        {
+            source.PlayOneShot(clip);
+        }
+        
+        public void StartSound(AudioClip clip)
+        {
+            StopSound();
+            
+            source.clip = clip;
+            source.Play();
+        }
+
+        public void StopSound()
+        {
+            if(!source.isPlaying)
+                source.Stop(); 
         }
     }
 }

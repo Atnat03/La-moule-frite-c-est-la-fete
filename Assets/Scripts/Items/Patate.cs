@@ -11,34 +11,13 @@ namespace Item
     {
         [SerializeField] private Transform _rayStart;
 
-        [SerializeField] private GameObject _normalMesh;
-        [SerializeField] private GameObject _cutMesh;
-
         [SerializeField] private float cookingTimeToBurn = 5;
         [SerializeField] private float cookingTime = 3;
-
-        private CookingState cookingState = CookingState.raw;
-        private CutState cutState = CutState.patate;
-
-        public enum CookingState
-        {
-            raw,
-            cooked,
-            burned
-        }
-
-        public enum CutState
-        {
-            patate,
-            frite
-        }
-
         public static event Action OnCooked;
 
         private void Start()
         {
             SetNewCuissonState(AlimentCuisson.PasCoupé);
-            cutState = CutState.frite;
         }
 
         public void CutCutPatate()
@@ -84,7 +63,7 @@ namespace Item
 
         public void Frying(CookingTimerBar cookingTimerBar)
             {
-                if (cutState == CutState.frite && cookingState != CookingState.burned)
+                if (Cuisson == AlimentCuisson.Crut && Cuisson != AlimentCuisson.Brulé)
                 {
                     StartCoroutine(TimerPatate(cookingTimerBar));
                     cookingTimerBar.gameObject.SetActive(true);
@@ -109,14 +88,16 @@ namespace Item
             }
 
             cookingTimerBar.gameObject.SetActive(false);
-            cookingState = CookingState.cooked;
+            SetNewCuissonState(AlimentCuisson.Cuit);
             OnCooked?.Invoke();
+            Debug.Log("Cuit cuit");
         }
 
         private void Burned()
         {
-            cookingState = CookingState.burned;
+            SetNewCuissonState(AlimentCuisson.Brulé);
             OnCooked?.Invoke();
+            Debug.Log("Burned");
         }
     }
 }   

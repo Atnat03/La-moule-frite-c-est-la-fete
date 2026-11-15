@@ -3,6 +3,7 @@ using System.Collections;
 using MyPrint;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Item
 {
@@ -26,6 +27,7 @@ namespace Item
         private float _currentForce = 0;
         private bool _isAiming = false;
         private bool _isInFrontLancer = false;
+        [SerializeField] private Image _targetImage;
 
         private Camera _camera;
         private Vector3 _baseCameraPosition;
@@ -134,8 +136,8 @@ namespace Item
                 rb.isKinematic = false;
                 rb.constraints = RigidbodyConstraints.None;
                 
-                Vector3 throwDirection = _camera.transform.forward.normalized;
-
+                Vector3 throwDirection = (_camera.ScreenPointToRay(Input.mousePosition).direction).normalized;
+                
                 rb.AddForce(throwDirection * _currentForce, ForceMode.Impulse);
             }
             
@@ -149,9 +151,13 @@ namespace Item
             if (_isAiming)
             {
                 _currentForce += Time.deltaTime * _forceGainPerSecond;
+                
+                _targetImage.gameObject.SetActive(true);
+                _targetImage.rectTransform.position = Input.mousePosition;
             }
             else
             {
+                _targetImage.gameObject.SetActive(false);
                 _currentForce -= Time.deltaTime * _forceLoosePerSecond;
             }
             

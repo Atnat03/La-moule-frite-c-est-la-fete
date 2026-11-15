@@ -4459,6 +4459,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5988429173356970809, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8069521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988429173356970809, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7295
+      objectReference: {fileID: 0}
     - target: {fileID: 7806819178122531458, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.57
@@ -4504,7 +4512,9 @@ PrefabInstance:
       value: Etagere_Sauce_G
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3210940524264542635, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
+    - {fileID: 4550251333294347027, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34053530f2e6d5c43b24afbab43898fd, type: 3}
@@ -5237,8 +5247,8 @@ MonoBehaviour:
   - {fileID: 1021444758}
   - {fileID: 1898763261}
   - {fileID: 585314518}
-  _timerDeSouleEtIlsSeCassentApres: {x: 30, y: 45}
-  _damage: 10
+  _timerDeSouleEtIlsSeCassentApres: {x: 60, y: 90}
+  _damage: 5
 --- !u!1 &1492019277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,6 +5394,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 323716469640246720, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.953823
+      objectReference: {fileID: 0}
+    - target: {fileID: 323716469640246720, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1841
+      objectReference: {fileID: 0}
     - target: {fileID: 1553513757734260827, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.887
@@ -5429,7 +5447,9 @@ PrefabInstance:
       value: Etagere_Sauce_D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4560323752911890475, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}
+    - {fileID: 5069156194829400953, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ef155ab3505f94eac349f3c6aad5ab, type: 3}

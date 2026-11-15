@@ -6821,7 +6821,7 @@ PrefabInstance:
     - target: {fileID: 6688119785453178835, guid: 754d179fb43f50d4ba53555160cedc35, type: 3}
       propertyPath: _alimentPos
       value: 
-      objectReference: {fileID: 1227960387}
+      objectReference: {fileID: 38261407}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -5053,7 +5053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Client.ClientManager
   _maxClientSimultaner: 2
-  _clientPrefab: {fileID: 3567372217515978735, guid: 5854d3f68990c624fa2788d2adfd2cac, type: 3}
+  _clientPrefab: {fileID: 3567372217515978735, guid: 5504e990648d5b14093b48782b51b182, type: 3}
   _possiblePoints:
   - {fileID: 1368323803}
   - {fileID: 2111092064}

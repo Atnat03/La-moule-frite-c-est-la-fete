@@ -113,6 +113,16 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
+                    ""name"": ""CenterClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""3aa7a70f-6219-4ddf-8da6-8925e8e0e3f7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
                     ""name"": ""SwitchCamera"",
                     ""type"": ""Button"",
                     ""id"": ""d31c67c1-f78b-43f7-8ce7-b9c8f669b3b4"",
@@ -158,6 +168,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""bb64fa86-a8f8-4389-bc18-5ba85704d787"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CenterClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""4a8c0d42-c65c-4280-81f8-171532f3fde3"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
@@ -187,6 +208,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_LeftClick = m_Gameplay.FindAction("LeftClick", throwIfNotFound: true);
         m_Gameplay_RightClick = m_Gameplay.FindAction("RightClick", throwIfNotFound: true);
+        m_Gameplay_CenterClick = m_Gameplay.FindAction("CenterClick", throwIfNotFound: true);
         m_Gameplay_SwitchCamera = m_Gameplay.FindAction("SwitchCamera", throwIfNotFound: true);
         m_Gameplay_Scroll = m_Gameplay.FindAction("Scroll", throwIfNotFound: true);
     }
@@ -271,6 +293,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_LeftClick;
     private readonly InputAction m_Gameplay_RightClick;
+    private readonly InputAction m_Gameplay_CenterClick;
     private readonly InputAction m_Gameplay_SwitchCamera;
     private readonly InputAction m_Gameplay_Scroll;
     /// <summary>
@@ -292,6 +315,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/RightClick".
         /// </summary>
         public InputAction @RightClick => m_Wrapper.m_Gameplay_RightClick;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/CenterClick".
+        /// </summary>
+        public InputAction @CenterClick => m_Wrapper.m_Gameplay_CenterClick;
         /// <summary>
         /// Provides access to the underlying input action "Gameplay/SwitchCamera".
         /// </summary>
@@ -332,6 +359,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
+            @CenterClick.started += instance.OnCenterClick;
+            @CenterClick.performed += instance.OnCenterClick;
+            @CenterClick.canceled += instance.OnCenterClick;
             @SwitchCamera.started += instance.OnSwitchCamera;
             @SwitchCamera.performed += instance.OnSwitchCamera;
             @SwitchCamera.canceled += instance.OnSwitchCamera;
@@ -355,6 +385,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
+            @CenterClick.started -= instance.OnCenterClick;
+            @CenterClick.performed -= instance.OnCenterClick;
+            @CenterClick.canceled -= instance.OnCenterClick;
             @SwitchCamera.started -= instance.OnSwitchCamera;
             @SwitchCamera.performed -= instance.OnSwitchCamera;
             @SwitchCamera.canceled -= instance.OnSwitchCamera;
@@ -415,6 +448,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRightClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CenterClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCenterClick(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "SwitchCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

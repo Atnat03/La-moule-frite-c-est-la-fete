@@ -42,6 +42,19 @@ namespace Item
                     b.AddProduitToCommande(Produit.Moule);
                     Destroy(gameObject);
                 }
+
+                if (hit.transform.TryGetComponent(out Poubelle poubelle))
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+        
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Poubelle p))
+            {
+                Destroy(gameObject);
             }
         }
     }

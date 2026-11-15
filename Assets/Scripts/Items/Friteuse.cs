@@ -11,22 +11,62 @@ public class Friteuse : MonoBehaviour, IInteractable
 	[SerializeField] private Transform patateTargetTransform;
 	[SerializeField] private float expulsionForce = 2f;
 	[SerializeField] private CookingTimerBar cookingTimerBar;
+	[SerializeField] private ParticleSystem[] fireVFX;
 	
 	[SerializeField] private float cookingTimeToBurn = 5;
 	[SerializeField] private float cookingTime = 3;
+	[SerializeField] private Vector3 offsetExpulsion = new Vector3(-1f, 0f, 0f);
 	
 	private Rigidbody rbOther;
 	private bool canFry = true;
 	private bool frying;
+	private bool onFire;
 	private Patate patate;
 	private Coroutine cookingCoroutine;
 
-	public void Deactivate()
+	void OnEnable()
+	{
+		ExtincteurPourLesPompiers.fireOff += OnFireOff;
+	}
+
+	void OnDisable()
+	{
+		ExtincteurPourLesPompiers.fireOff -= OnFireOff;
+	}
+
+	public void Fire()
+	{
+		if (patate != null)
+		{
+			if (cookingCoroutine != null) StopCoroutine(cookingCoroutine);
+			cookingTimerBar.gameObject.SetActive(false);
+			Burned();
+			Debug.Log("fire");
+		}
+		onFire = true;
+		
+		foreach (var fire in fireVFX)
+		{
+			fire.Play();
+		}
+	}
+
+	private void OnFireOff()
+	{
+		onFire = false;
+		
+		foreach (var fire in fireVFX)
+		{
+			fire.Stop();
+		}
+	}
+
+	private void Deactivate()
 	{
 		canFry = false;
 	}
 
-	public void Activate()
+	private void Activate()
 	{
 		canFry = true;
 	}
@@ -60,24 +100,20 @@ public class Friteuse : MonoBehaviour, IInteractable
 			}
 
 			patate = actualPatate;
-			Frying();
+			
 			Deactivate();
+			Frying();
+		}
+		else if (other.gameObject.TryGetComponent(out BouteilleAlcool alcool))
+		{
+			Fire();
+			Destroy(other.gameObject);
 		}
 		else
 		{
+			Debug.Log(other.gameObject.name);
 			if (other.gameObject.TryGetComponent(out Rigidbody rb))
 				rb.AddForce((other.gameObject.transform.position - gameObject.transform.position).normalized * expulsionForce, ForceMode.Impulse);
-		}
-	}
-	
-	private void OnCooked()
-	{
-		frying = false;
-		Activate();
-		if (rbOther)
-		{
-			rbOther.isKinematic = false;
-			rbOther.AddForce(gameObject.transform.up * expulsionForce, ForceMode.Impulse);
 		}
 	}
 	
@@ -85,7 +121,7 @@ public class Friteuse : MonoBehaviour, IInteractable
 	{
 		frying = true;
 		
-		if (patate.Cuisson == AlimentCuisson.Crut && patate.Cuisson != AlimentCuisson.Brulé)
+		if (patate.Cuisson == AlimentCuisson.Crut && patate.Cuisson != AlimentCuisson.Brulé && !onFire)
 		{
 			cookingCoroutine = StartCoroutine(TimerPatate());
 			cookingTimerBar.gameObject.SetActive(true);
@@ -119,4 +155,17 @@ public class Friteuse : MonoBehaviour, IInteractable
 		OnCooked();
 		Debug.Log("Burned");
 	}
+	
+	private void OnCooked()
+	{
+		frying = false;
+		Activate();
+		if (rbOther)
+		{
+			rbOther.isKinematic = false;
+			rbOther.AddForce((gameObject.transform.up + offsetExpulsion).normalized  * expulsionForce, ForceMode.Impulse);
+			patate = null;
+		}
+	}
+
 }

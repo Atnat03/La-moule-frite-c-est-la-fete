@@ -27,6 +27,16 @@
                     "priority": 0
                 },
                 {
+                    "name": "CenterClick",
+                    "type": "Button",
+                    "id": "3aa7a70f-6219-4ddf-8da6-8925e8e0e3f7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "SwitchCamera",
                     "type": "Button",
                     "id": "d31c67c1-f78b-43f7-8ce7-b9c8f669b3b4",
@@ -67,6 +77,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb64fa86-a8f8-4389-bc18-5ba85704d787",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CenterClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -67,5 +67,15 @@ namespace Item
 
             _rigidbody.linearVelocity = direction * _followSpeed;
         }
+
+        public void RecentreItem()
+        {
+            _isInHand = false;
+            
+            transform.position = Player.Player.instance.CenterPos.position;
+            transform.rotation = Player.Player.instance.CenterPos.rotation;
+            
+            _rigidbody.useGravity = true;
+        }
     }
 }

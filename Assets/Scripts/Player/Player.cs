@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -19,8 +20,11 @@ namespace Player
         [Header("Score")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         public int Score = 0;
-
-        public GameObject AlimentInHand;
+        
+        [Header("HP")]
+        [SerializeField] private float _hp = 100f;
+        private float _maxHp;
+        [SerializeField] private Image _hpBar;
         
         PlayerInputs _inputs;
 
@@ -31,6 +35,8 @@ namespace Player
             _inputs = new PlayerInputs();
 
             instance = this;
+
+            _maxHp = _hp;
         }
 
         private void Start()
@@ -61,6 +67,22 @@ namespace Player
         private void Update()
         {
             _scoreText.text = Score.ToString();
+            _hpBar.fillAmount = _hp / _hp;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            _hp -= damage;
+
+            if (_hp <= 0)
+            {
+                Dead();
+            }
+        }
+
+        private void Dead()
+        {
+            
         }
     }
 }

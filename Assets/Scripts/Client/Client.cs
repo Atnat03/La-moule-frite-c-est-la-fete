@@ -22,7 +22,9 @@ namespace Client
 		[SerializeField] private Image _timerImage;
 		public float MaxTimer;
 
-		public Action<ClientCommand> OnGetHisCommand; 
+		public Action<ClientCommand> OnGetHisCommand;
+		
+		public int _currentModel;
 		
 		private void Start()
 		{
@@ -34,6 +36,7 @@ namespace Client
 		private void SetRandomModel()
 		{
 			int r = Random.Range(0, model.Length);
+			_currentModel = r;
 			
 			for (int i = 0; i < model.Length; i++)
 			{

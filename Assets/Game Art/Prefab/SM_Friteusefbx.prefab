@@ -1364,6 +1364,7 @@ MonoBehaviour:
   offsetExpulsion: {x: -1, y: 0, z: 0}
   ajoutBarAlcoolParGoutte: 0.058
   maxAlcool: 0.867
+  bonusRatioAlcool: 1.5
 --- !u!65 &7437655400571888154
 BoxCollider:
   m_ObjectHideFlags: 0

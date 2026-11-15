@@ -3,6 +3,7 @@ using System.Collections;
 using MyPrint;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Item
 {
@@ -19,14 +20,17 @@ namespace Item
 
         Transform _currentBarquetteInTheLanceur;
 
-        [Header("Throw")] [SerializeField] private float _maxForce = 50;
+        [Header("Throw")] 
+        [SerializeField] private float _maxForce = 50;
         [SerializeField] private float _forceGainPerSecond = 10f;
         [SerializeField] private float _forceLoosePerSecond = 40f;
         [SerializeField] private float _maxFOVThrow = 90;
         private float _currentForce = 0;
         private bool _isAiming = false;
         private bool _isInFrontLancer = false;
-
+        [SerializeField] private Image _targetImage;
+        [SerializeField] private Animator _animator;
+        
         private Camera _camera;
         private Vector3 _baseCameraPosition;
         private float _baseCameraFOV;
@@ -124,6 +128,8 @@ namespace Item
             
             if(_currentBarquetteInTheLanceur == null)
                 return;
+
+            _animator.SetFloat("Throw", 0);
             
             _isAiming = false;
             
@@ -134,8 +140,8 @@ namespace Item
                 rb.isKinematic = false;
                 rb.constraints = RigidbodyConstraints.None;
                 
-                Vector3 throwDirection = _camera.transform.forward.normalized;
-
+                Vector3 throwDirection = (_camera.ScreenPointToRay(Input.mousePosition).direction).normalized;
+                
                 rb.AddForce(throwDirection * _currentForce, ForceMode.Impulse);
             }
             
@@ -143,15 +149,21 @@ namespace Item
             
             _currentBarquetteInTheLanceur = null;
         }
-
+        
         private void Update()
         {
             if (_isAiming)
             {
                 _currentForce += Time.deltaTime * _forceGainPerSecond;
+                
+                _targetImage.gameObject.SetActive(true);
+                _targetImage.rectTransform.position = Input.mousePosition;
+                
+                _animator.SetFloat("Throw", _currentForce / _maxForce);
             }
             else
             {
+                _targetImage.gameObject.SetActive(false);
                 _currentForce -= Time.deltaTime * _forceLoosePerSecond;
             }
             
@@ -164,10 +176,11 @@ namespace Item
                 _camera.fieldOfView = Mathf.Lerp(_baseCameraFOV, _maxFOVThrow, _currentForce / _maxForce);
         }
 
-        public Vector3 SetTargetOnTheLanceur(Transform target)
+        public (Vector3, Quaternion) SetTargetOnTheLanceur(Transform target)
         {
             _currentBarquetteInTheLanceur = target;
-            return _barquettePosition.position;
+            target.parent = _barquettePosition;
+            return (_barquettePosition.position, _barquettePosition.rotation);
         }
     }
 }

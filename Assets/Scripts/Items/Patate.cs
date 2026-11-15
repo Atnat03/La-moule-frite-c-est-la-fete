@@ -1,11 +1,16 @@
 ﻿using System;
+using Data;
+using Item.Interfaces;
+using MyPrint;
 using System.Collections;
 using UnityEngine;
 
 namespace Item
 {
-    public class Patate : BasePickableItem, IFriable
+    public class Patate : BasePickableItem, IAliments, IFriable
     {
+        [SerializeField] private Transform _rayStart;
+        
         [SerializeField] private GameObject _normalMesh;
         [SerializeField] private GameObject _cutMesh;
         
@@ -32,16 +37,48 @@ namespace Item
 
         private void Start()
         {
-            _normalMesh.SetActive(true);
-            _cutMesh.SetActive(false);
+            SetNewCuissonState(AlimentCuisson.PasCoupé);
+            cutState = CutState.frite;
         }
 
         public void CutCutPatate()
         {
-            _normalMesh.SetActive(false);
-            _cutMesh.SetActive(true);
-            cutState = CutState.frite;
+            SetNewCuissonState(AlimentCuisson.Crut);
         }
+
+        public AlimentCuisson Cuisson {get; set;}
+        [SerializeField] private GameObject[] _states;
+        
+        public void SetNewCuissonState(AlimentCuisson cuisson)
+        {
+            Cuisson = cuisson;
+            
+            for (int i = 0; i < _states.Length; i++)
+            {
+                _states[i].SetActive(i == (int)Cuisson);
+            }
+        }
+
+        [ContextMenu("Cuit")]
+        public void Cuit() => SetNewCuissonState(AlimentCuisson.Cuit);
+
+        public override void StopInteract()
+        {
+            base.StopInteract();
+            
+            Debug.DrawLine(_rayStart.position, _rayStart.forward.normalized * 5f, Color.red);
+
+            if (Cuisson != AlimentCuisson.Cuit)
+                return;
+                
+            if (Physics.Raycast(_rayStart.position, _rayStart.forward.normalized * 5f, out RaycastHit hit))
+            {
+                if (hit.transform.TryGetComponent(out Barquette b))
+                {
+                    b.AddProduitToCommande(Produit.Frite);
+                    Destroy(gameObject);
+                }
+            }
         
         public void Frying(CookingTimerBar cookingTimerBar)
         {

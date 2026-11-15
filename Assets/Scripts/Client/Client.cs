@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Data;
+using MyPrint;
 using TMPro;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Client
 {
@@ -11,9 +15,30 @@ namespace Client
 
 		[SerializeField] private TextMeshProUGUI commandText;
 
+		[Header("Model")]
+		[SerializeField] private GameObject[] model;
+		
+		[Header("UI")]
+		[SerializeField] private Image _timerImage;
+		public float MaxTimer;
+
+		public Action<ClientCommand> OnGetHisCommand; 
+		
 		private void Start()
 		{
+			SetRandomModel();
+			
 			Command();
+		}
+
+		private void SetRandomModel()
+		{
+			int r = Random.Range(0, model.Length);
+			
+			for (int i = 0; i < model.Length; i++)
+			{
+				model[i].SetActive(i == r);
+			}
 		}
 
 		public void Command()
@@ -118,12 +143,17 @@ namespace Client
 		public float CheckIfItsTheGoodCommand(Commande c)
 		{
 			float r = 0;
-
-			if (c.Equals(command))
+			
+			if(c != null)
 			{
-				r = command.point;
+				if (c.CheckCommand(command))
+				{
+					r = command.point;
+				}
+			
+				OnGetHisCommand?.Invoke(this);
 			}
-
+			
 			return r;
 		}
 
@@ -134,6 +164,13 @@ namespace Client
 				commandText.text += $"-{command.sauceFrite}\n";
 			if(command.sauceMoule !=  SauceMoule.Empty)
 				commandText.text += $"-{command.sauceMoule}";
+		}
+		
+		public void ClientPartis() => Destroy(gameObject);
+
+		public void UpdateTimer(float currentValue)
+		{
+			_timerImage.fillAmount = currentValue / MaxTimer;
 		}
 	}
 }

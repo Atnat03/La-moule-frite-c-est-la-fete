@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Player
@@ -14,6 +15,10 @@ namespace Player
         [Header("Drunk")] 
         [SerializeField] private float _drunkDuration = 10;
         [SerializeField] private float _drunkMagnitude = 0.1f;
+        
+        [Header("Score")]
+        [SerializeField] private TextMeshProUGUI _scoreText;
+        public int Score = 0;
         
         PlayerInputs _inputs;
         
@@ -47,6 +52,11 @@ namespace Player
         public void StartDrunk()
         {
             _mainCamera.GetComponent<CameraShake>().Shake(_drunkDuration, _drunkMagnitude);
+        }
+
+        private void Update()
+        {
+            _scoreText.text = Score.ToString();
         }
     }
 }

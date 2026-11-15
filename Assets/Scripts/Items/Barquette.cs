@@ -14,12 +14,18 @@ namespace Item
         private Vector3 _startPosition;
         private Vector3 _direction;
 
-        [SerializeField] private Commande _currentCommand;
+        [SerializeField] private GameObject _friteMesh;
+        [SerializeField] private GameObject _mouleMesh;
 
         void Start()
         {
+            Command = new Commande();
+            
             _startPosition = transform.position - transform.forward;
             _direction = transform.forward;
+            
+            _friteMesh.SetActive(false);
+            _mouleMesh.SetActive(false);
         }
         
         public override void StopInteract()
@@ -37,24 +43,45 @@ namespace Item
                 {
                     if (hit.transform.TryGetComponent(out LanceBarquette lanceBarquette))
                     {
-                        transform.position = lanceBarquette.SetTargetOnTheLanceur(transform);
+                        var data = lanceBarquette.SetTargetOnTheLanceur(transform);
+                        transform.position = data.Item1;
+                        transform.rotation = data.Item2;
                         _rigidbody.isKinematic = true;
                         _isOnLanceur = true;
                     }
                 }
             }
         }
-        
-        public void AddProduitToCommande(Produit type) => _currentCommand.produitType = type;
-        public void AddSauceFriteToCommande(SauceFrite type) => _currentCommand.sauceFrite = type;
-        public void AddSauceMouleToCommande(SauceMoule type) => _currentCommand.sauceMoule = type;
+
+        public void AddProduitToCommande(Produit type)
+        {
+            Command.produitType = type;
+            if (type == Produit.Frite)
+            {
+                if (_mouleMesh.activeSelf)
+                {
+                    Command.produitType = Produit.FriteMoule;
+                }
+                _friteMesh.SetActive(true);
+            }
+            if (type == Produit.Moule)
+            {
+                if (_friteMesh.activeSelf)
+                {
+                    Command.produitType = Produit.FriteMoule;
+                }
+                _mouleMesh.SetActive(true);
+            }
+        }
+        public void AddSauceFriteToCommande(SauceFrite type) => Command.sauceFrite = type;
+        public void AddSauceMouleToCommande(SauceMoule type) => Command.sauceMoule = type;
 
         public void OnCollisionEnter(Collision c)
         {
             if (c.collider.TryGetComponent(out ClientCommand client))
             {
                 float addScore = client.CheckIfItsTheGoodCommand(Command);
-                ABPrint.Print("+ number points : " + addScore);
+                Player.Player.instance.Score += (int)addScore;
             }
         }
         

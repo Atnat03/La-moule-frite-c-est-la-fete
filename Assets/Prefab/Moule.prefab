@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4786155188758920290}
+  - {fileID: 1387890121782569664}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4516718293970808559
@@ -81,8 +82,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.20622858, y: 0.124117374, z: 0.24656224}
-  m_Center: {x: 0.019502118, y: 0.06108308, z: -0.0017124414}
+  m_Size: {x: 0.11729935, y: 0.09059, z: 0.12137127}
+  m_Center: {x: 0.013993219, y: 0.04431939, z: 0.0050070286}
 --- !u!114 &321320567438069037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +98,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item.Moule
   _followSpeed: 15
   _distanceToCamera: 3
+  _rayStart: {fileID: 1387890121782569664}
+  _meshRenderers: {fileID: 5918004880978593549}
+  _materials:
+  - {fileID: 2100000, guid: 7a9c65e4c74d5644fb566bd40845e33f, type: 2}
+  - {fileID: 2100000, guid: 7a9c65e4c74d5644fb566bd40845e33f, type: 2}
+  - {fileID: 2100000, guid: eb530689946987f4d83a687b848e0b1e, type: 2}
+  - {fileID: 2100000, guid: 8a5858cba668a024ab1618c5ded6329d, type: 2}
+--- !u!1 &5398002878504033784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1387890121782569664}
+  m_Layer: 6
+  m_Name: Ray
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1387890121782569664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398002878504033784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9042113869214746246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &76442083420647186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,5 +196,10 @@ PrefabInstance:
 --- !u!4 &4786155188758920290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4856082586594939760, guid: 965dcd1ec090a7e41bf46e87b43b0fa6, type: 3}
+  m_PrefabInstance: {fileID: 76442083420647186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5918004880978593549 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5994125897742706719, guid: 965dcd1ec090a7e41bf46e87b43b0fa6, type: 3}
   m_PrefabInstance: {fileID: 76442083420647186}
   m_PrefabAsset: {fileID: 0}

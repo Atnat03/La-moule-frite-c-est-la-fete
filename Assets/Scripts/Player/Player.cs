@@ -1,6 +1,9 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Scene = Unity.VectorGraphics.Scene;
 
 namespace Player
 {
@@ -19,21 +22,33 @@ namespace Player
         [Header("Score")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         public int Score = 0;
-
-        public GameObject AlimentInHand;
+        
+        [Header("HP")]
+        [SerializeField] private float _hp = 100f;
+        private float _maxHp;
+        [SerializeField] private Image _hpBar;
+        
+        [Header("Game over")]
+        [SerializeField] private GameObject _gameOverCanva;
+        [SerializeField] private TextMeshProUGUI _scoreGO;
         
         PlayerInputs _inputs;
+
+        public Transform CenterPos;
         
         void Awake()
         {
             _inputs = new PlayerInputs();
 
             instance = this;
+
+            _maxHp = _hp;
         }
 
         private void Start()
         {
             SwitchCamera(true);
+            _gameOverCanva.SetActive(false);
         }
 
         void OnEnable()
@@ -59,6 +74,29 @@ namespace Player
         private void Update()
         {
             _scoreText.text = Score.ToString();
+            _hpBar.fillAmount = _hp / _maxHp;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            _hp -= damage;
+
+            if (_hp <= 0)
+            {
+                Dead();
+            }
+        }
+
+        private void Dead()
+        {
+            _gameOverCanva.SetActive(true);
+            _scoreGO.text = Score.ToString();
+        }
+
+        public void Replay()
+        {
+            string s = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(s);
         }
     }
 }

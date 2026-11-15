@@ -12,6 +12,8 @@ namespace Client
         [SerializeField] private Transform[] _possiblePoints;
         
         [SerializeField] private Vector2 _timerDeSouleEtIlsSeCassentApres = new Vector2(5, 10);
+
+        [SerializeField] private float _damage = 10;
         
         private Dictionary<ClientCommand, float> _dict = new Dictionary<ClientCommand, float>();
 
@@ -58,6 +60,7 @@ namespace Client
                 if (_dict[pair.Key] <= 0)
                 {
                     RemoveFromDict(pair.Key);
+                    Player.Player.instance.TakeDamage(_damage);
                 }
             }
         }

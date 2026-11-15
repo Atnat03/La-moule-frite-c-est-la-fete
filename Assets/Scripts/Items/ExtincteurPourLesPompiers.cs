@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Item
@@ -8,6 +9,8 @@ namespace Item
         [SerializeField] private ParticleSystem _particleMousse;
         
         PlayerInputs _playerInputs;
+        
+        public static event Action fireOff;
 
         void OnEnable()
         {
@@ -32,6 +35,9 @@ namespace Item
                 if(_particleMousse.isPlaying) return;
                 
                 _particleMousse.Play();
+                fireOff?.Invoke();
+                
+                Destroy(gameObject, _particleMousse.main.duration);
             }
         }
     }

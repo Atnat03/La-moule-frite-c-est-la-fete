@@ -21,12 +21,38 @@ public class Friteuse : MonoBehaviour, IInteractable
 	private Patate patate;
 	private Coroutine cookingCoroutine;
 
-	public void Deactivate()
+	void OnEnable()
+	{
+		ExtincteurPourLesPompiers.fireOff += OnFireOff;
+	}
+
+	void OnDisable()
+	{
+		ExtincteurPourLesPompiers.fireOff -= OnFireOff;
+	}
+
+	public void Fire()
+	{
+		if (patate != null)
+		{
+			if (cookingCoroutine != null) StopCoroutine(cookingCoroutine);
+			cookingTimerBar.gameObject.SetActive(false);
+			Burned();
+		}
+		Deactivate();
+	}
+
+	private void OnFireOff()
+	{
+		Activate();
+	}
+
+	private void Deactivate()
 	{
 		canFry = false;
 	}
 
-	public void Activate()
+	private void Activate()
 	{
 		canFry = true;
 	}
@@ -60,24 +86,20 @@ public class Friteuse : MonoBehaviour, IInteractable
 			}
 
 			patate = actualPatate;
-			Frying();
+			
 			Deactivate();
+			Frying();
+		}
+		else if (other.gameObject.TryGetComponent(out BouteilleAlcool alcool))
+		{
+			Fire();
+			Destroy(other.gameObject);
 		}
 		else
 		{
+			Debug.Log(other.gameObject.name);
 			if (other.gameObject.TryGetComponent(out Rigidbody rb))
 				rb.AddForce((other.gameObject.transform.position - gameObject.transform.position).normalized * expulsionForce, ForceMode.Impulse);
-		}
-	}
-	
-	private void OnCooked()
-	{
-		frying = false;
-		Activate();
-		if (rbOther)
-		{
-			rbOther.isKinematic = false;
-			rbOther.AddForce(gameObject.transform.up * expulsionForce, ForceMode.Impulse);
 		}
 	}
 	
@@ -119,4 +141,17 @@ public class Friteuse : MonoBehaviour, IInteractable
 		OnCooked();
 		Debug.Log("Burned");
 	}
+	
+	private void OnCooked()
+	{
+		frying = false;
+		Activate();
+		if (rbOther)
+		{
+			rbOther.isKinematic = false;
+			rbOther.AddForce(gameObject.transform.up * expulsionForce, ForceMode.Impulse);
+			patate = null;
+		}
+	}
+
 }

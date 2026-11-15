@@ -6365,9 +6365,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.941
       objectReference: {fileID: 0}
+    - target: {fileID: 1320758186590547838, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.57694674
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320758186590547838, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.x
+      value: -0.17000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320758186590547838, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.y
+      value: 1.1134734
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320758186590547838, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.z
+      value: 0.000000019073488
+      objectReference: {fileID: 0}
     - target: {fileID: 2921664993516204468, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
       propertyPath: m_Name
       value: TwingoTRUCKelargi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117317531963490762, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5871885
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117317531963490762, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.x
+      value: -0.17000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117317531963490762, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.y
+      value: 1.1185943
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117317531963490762, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
+      propertyPath: m_Center.z
+      value: 0.000000019073488
       objectReference: {fileID: 0}
     - target: {fileID: 4638469346078825871, guid: c7b5d91b628f6114f8d2cc5965c2125e, type: 3}
       propertyPath: m_LocalPosition.x

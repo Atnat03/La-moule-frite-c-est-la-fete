@@ -12,7 +12,8 @@ public class Friteuse : MonoBehaviour, IInteractable
 	[SerializeField] private float expulsionForce = 2f;
 	[SerializeField] private CookingTimerBar cookingTimerBar;
 	[SerializeField] private ParticleSystem[] fireVFX;
-	[SerializeField] private AlcoolBar alcoolBar;
+	[SerializeField] private AudioSource source;
+	[SerializeField] private AudioClip friteBurned, fireSound;
 	
 	[SerializeField] private float cookingTimeToBurn = 5;
 	[SerializeField] private float cookingTime = 3;
@@ -27,11 +28,6 @@ public class Friteuse : MonoBehaviour, IInteractable
 	private bool onFire;
 	private Patate patate;
 	private Coroutine cookingCoroutine;
-
-	private void Start()
-	{
-		alcoolBar.InitAlcoolBar(maxAlcool);
-	}
 
 	void OnEnable()
 	{
@@ -59,6 +55,10 @@ public class Friteuse : MonoBehaviour, IInteractable
 		{
 			fire.Play();
 		}
+		source.Stop();
+		source.clip = fireSound;
+		source.loop = true;
+		source.Play();
 	}
 
 	private void OnFireOff()
@@ -69,6 +69,7 @@ public class Friteuse : MonoBehaviour, IInteractable
 		{
 			fire.Stop();
 		}
+		source.Stop();
 	}
 
 	private void Deactivate()
@@ -168,6 +169,10 @@ public class Friteuse : MonoBehaviour, IInteractable
 		patate.SetNewCuissonState(AlimentCuisson.Brulé);
 		OnCooked();
 		Debug.Log("Burned");
+		source.Stop();
+		source.clip = friteBurned;
+		source.loop = false;
+		source.Play();
 	}
 	
 	private void OnCooked()

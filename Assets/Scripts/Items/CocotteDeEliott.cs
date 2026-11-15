@@ -19,6 +19,7 @@ namespace Item
         [Header("End Cuisson")]
         [SerializeField] private float _throwForce;
         [SerializeField] private float _angle = 10;
+        [SerializeField] private Transform _posStartDrop;
 
         [Header("Timer")] 
         [SerializeField] private float _maxCuissonTime = 3f;
@@ -74,6 +75,8 @@ namespace Item
             
             if (_mouleDansLaMarmite != null)
             {
+                _mouleDansLaMarmite.transform.position = _posStartDrop.position;
+                
                 Rigidbody rb = _mouleDansLaMarmite.GetComponent<Rigidbody>();
                 
                 float r = Random.Range(0, 100);

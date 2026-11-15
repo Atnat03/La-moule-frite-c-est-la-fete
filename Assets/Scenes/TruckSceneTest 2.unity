@@ -393,6 +393,59 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &878798538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878798540}
+  - component: {fileID: 878798539}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &878798539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878798538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &878798540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878798538}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.48, y: 1.478, z: 3.038}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946790924
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +618,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.Player
   _mainCamera: {fileID: 493730097}
   _truckCamera: {fileID: 412391184}
+  _drunkDuration: 10
+  _drunkMagnitude: 0.1
+  _scoreText: {fileID: 0}
+  Score: 0
 --- !u!1 &1415544564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,15 +1166,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1827906736975888617, guid: 5583f2b32611dce4693eb4ec9278184b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.596
+      value: -1.514
       objectReference: {fileID: 0}
     - target: {fileID: 1827906736975888617, guid: 5583f2b32611dce4693eb4ec9278184b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.15
+      value: 3.691
       objectReference: {fileID: 0}
     - target: {fileID: 1827906736975888617, guid: 5583f2b32611dce4693eb4ec9278184b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.131
+      value: 3.443
       objectReference: {fileID: 0}
     - target: {fileID: 1827906736975888617, guid: 5583f2b32611dce4693eb4ec9278184b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1167,6 +1224,10 @@ PrefabInstance:
     - target: {fileID: 3441508159453172805, guid: 926cb7c681e5cd9429ac4551f5ffb820, type: 3}
       propertyPath: m_Name
       value: LanceBarquette
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441508159453172805, guid: 926cb7c681e5cd9429ac4551f5ffb820, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4285686417414079456, guid: 926cb7c681e5cd9429ac4551f5ffb820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1229,3 +1290,4 @@ SceneRoots:
   - {fileID: 1927217317373317360}
   - {fileID: 1754570749}
   - {fileID: 2001938106}
+  - {fileID: 878798540}

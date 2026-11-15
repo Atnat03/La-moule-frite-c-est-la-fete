@@ -37,12 +37,13 @@ public class Friteuse : MonoBehaviour, IInteractable
 			return;
 		
 		if (cookingTimerBar.goodTime)
-		{
-			OnCooked();
 			patate.SetNewCuissonState(AlimentCuisson.Cuit);
-			StopCoroutine(cookingCoroutine);
-			cookingTimerBar.gameObject.SetActive(false);
-		}
+		else
+			patate.SetNewCuissonState(AlimentCuisson.Brulé);
+		
+		OnCooked();
+		StopCoroutine(cookingCoroutine);
+		cookingTimerBar.gameObject.SetActive(false);
 	}
 
 	public void StopInteract() { }

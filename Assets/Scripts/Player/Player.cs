@@ -19,8 +19,12 @@ namespace Player
         [Header("Score")]
         [SerializeField] private TextMeshProUGUI _scoreText;
         public int Score = 0;
+
+        public GameObject AlimentInHand;
         
         PlayerInputs _inputs;
+
+        public Transform CenterPos;
         
         void Awake()
         {

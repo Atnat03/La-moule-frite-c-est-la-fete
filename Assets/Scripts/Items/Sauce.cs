@@ -11,8 +11,11 @@ namespace Item
         [SerializeField] private SauceFrite _sauceFrite;
         [SerializeField] private SauceMoule _sauceMoule;
         
-        [SerializeField] private GameObject _saucePrefab;
+        
+        [Header("Splash")]
         [SerializeField] private Transform _sauceTransformSpawn;
+        [SerializeField] private SauceSplash _slashPrefab;
+        [SerializeField] private Material _decalSplashMat;
 
         [Header("Rotate")] 
         [SerializeField] private float _rotateStep = 5;
@@ -59,6 +62,8 @@ namespace Item
 
                 if (Physics.Raycast(startPos, direction, out RaycastHit hit))
                 {
+                    bool hitBarquette = false;
+                    
                     if (hit.transform.TryGetComponent(out Barquette b))
                     {
                         if(_sauceFrite != SauceFrite.Empty)
@@ -67,7 +72,19 @@ namespace Item
                         if(_sauceMoule != SauceMoule.Empty)
                             b.AddSauceMouleToCommande(_sauceMoule);
                         
-                        Instantiate(_saucePrefab, hit.transform.position, Quaternion.identity);
+                        hitBarquette = true;
+                    }
+                    
+                    SauceSplash s = Instantiate(_slashPrefab, hit.point, Quaternion.LookRotation(-hit.normal));
+                    s.SetDecalSplash(_decalSplashMat);
+                    
+                    if(!hitBarquette)
+                    {
+                        Destroy(s.gameObject, 5f);
+                    }
+                    else
+                    {
+                        s.transform.parent = hit.transform;
                     }
                 }
             }

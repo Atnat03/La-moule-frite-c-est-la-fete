@@ -51,6 +51,8 @@ namespace Item
             _isAllumer = true;
             _marmiteParticles.SetActive(true);
             
+            _elapsedTimeCuisson = 0;
+            
             if(_coroutineCuisson == null)
                 _coroutineCuisson = StartCoroutine(CuissonRoutine());
         }
@@ -130,7 +132,7 @@ namespace Item
                     EndCuisson();
                     return;
                 }
-                
+
                 _mouleDansLaMarmite = moule;
                 StartHeating();
             }

@@ -32,8 +32,6 @@ namespace Item
                 if(_particleMousse.isPlaying) return;
                 
                 _particleMousse.Play();
-                
-                Destroy(gameObject, _particleMousse.main.duration);
             }
         }
     }

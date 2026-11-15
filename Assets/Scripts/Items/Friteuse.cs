@@ -20,6 +20,7 @@ public class Friteuse : MonoBehaviour, IInteractable
 	[SerializeField] private Vector3 offsetExpulsion = new Vector3(-1f, 0f, 0f);
 	[SerializeField, Range(0, 1)] private float ajoutBarAlcoolParGoutte;
 	[SerializeField, Range(0, 1)] private float maxAlcool = 0.867f;
+	[SerializeField] private float bonusRatioAlcool = 1.5f;
 
 	private float alcoolAmount;
 	private Rigidbody rbOther;
@@ -183,6 +184,8 @@ public class Friteuse : MonoBehaviour, IInteractable
 		{
 			rbOther.isKinematic = false;
 			rbOther.AddForce((gameObject.transform.up + offsetExpulsion).normalized  * expulsionForce, ForceMode.Impulse);
+			patate.scoreBonus = bonusRatioAlcool * alcoolAmount;
+			alcoolAmount = 0;
 			patate = null;
 		}
 	}

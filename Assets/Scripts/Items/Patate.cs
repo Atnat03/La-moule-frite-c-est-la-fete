@@ -7,13 +7,9 @@ using UnityEngine;
 
 namespace Item
 {
-    public class Patate : BasePickableItem, IAliments, IFriable
+    public class Patate : BasePickableItem, IAliments
     {
         [SerializeField] private Transform _rayStart;
-
-        [SerializeField] private float cookingTimeToBurn = 5;
-        [SerializeField] private float cookingTime = 3;
-        public static event Action OnCooked;
 
         private void Start()
         {
@@ -59,45 +55,6 @@ namespace Item
                     Destroy(gameObject);
                 }
             }
-        }
-
-        public void Frying(CookingTimerBar cookingTimerBar)
-            {
-                if (Cuisson == AlimentCuisson.Crut && Cuisson != AlimentCuisson.Brulé)
-                {
-                    StartCoroutine(TimerPatate(cookingTimerBar));
-                    cookingTimerBar.gameObject.SetActive(true);
-                    cookingTimerBar.InitializeTimerBar(cookingTimeToBurn - cookingTime, cookingTime, cookingTimeToBurn);
-                }
-                else
-                    Burned();
-            }
-
-        IEnumerator TimerPatate(CookingTimerBar cookingTimerBar)
-        {
-            bool notBurned = true;
-            float timeElasped = 0;
-            while (notBurned)
-            {
-                timeElasped += Time.deltaTime;
-                cookingTimerBar.HandleTimer(timeElasped, cookingTimeToBurn - cookingTime, cookingTime);
-
-                if (timeElasped >= cookingTimeToBurn)
-                    notBurned = false;
-                yield return null;
-            }
-
-            cookingTimerBar.gameObject.SetActive(false);
-            SetNewCuissonState(AlimentCuisson.Cuit);
-            OnCooked?.Invoke();
-            Debug.Log("Cuit cuit");
-        }
-
-        private void Burned()
-        {
-            SetNewCuissonState(AlimentCuisson.Brulé);
-            OnCooked?.Invoke();
-            Debug.Log("Burned");
         }
     }
 }   

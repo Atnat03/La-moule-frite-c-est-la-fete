@@ -785,6 +785,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ee743dd368a7ef46b428a65c5031b28, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2612724951867272603}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ee743dd368a7ef46b428a65c5031b28, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7437655400571888154}
   m_SourcePrefab: {fileID: 100100000, guid: 4ee743dd368a7ef46b428a65c5031b28, type: 3}
 --- !u!4 &3491231592001271103 stripped
 Transform:
@@ -833,3 +836,26 @@ MonoBehaviour:
   patateTargetTransform: {fileID: 9136993235484461276}
   expulsionForce: 8
   cookingTimerBar: {fileID: 8710698558040229381}
+  cookingTimeToBurn: 5
+  cookingTime: 3
+--- !u!65 &7437655400571888154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267310241440018309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.03, y: 0.79, z: 1.04}
+  m_Center: {x: -0.17, y: 1.22, z: 0}

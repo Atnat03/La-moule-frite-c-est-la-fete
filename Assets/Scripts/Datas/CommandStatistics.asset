@@ -27,39 +27,27 @@ MonoBehaviour:
     pointAvecSauce: 40
   statisticSauceFrite:
   - sauceType: 0
-    probability: 0.16666667
+    probability: 0.25
     point: 0
   - sauceType: 1
-    probability: 0.1666667
+    probability: 0.25
     point: 2
   - sauceType: 2
-    probability: 0.1666667
+    probability: 0.25
     point: 2
   - sauceType: 3
-    probability: 0.1666667
-    point: 2
-  - sauceType: 4
-    probability: 0.1666667
-    point: 2
-  - sauceType: 5
-    probability: 0.1666667
+    probability: 0.25
     point: 2
   statisticSauceMoule:
   - sauceType: 0
-    probability: 0.16666667
+    probability: 0.25
     point: 0
   - sauceType: 1
-    probability: 0.1666667
+    probability: 0.25
     point: 2
   - sauceType: 2
-    probability: 0.1666667
+    probability: 0.25
     point: 2
   - sauceType: 3
-    probability: 0.1666667
-    point: 2
-  - sauceType: 4
-    probability: 0.1666667
-    point: 2
-  - sauceType: 5
-    probability: 0.1666667
+    probability: 0.25
     point: 2

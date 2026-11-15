@@ -36,9 +36,7 @@ namespace Data
 		Empty,
 		Ketchup,
 		Mayonnaise,
-		Moutarde,
-		Samourai,
-		Algerienne
+		Moutarde
 	}
 	
 	public enum SauceMoule
@@ -46,8 +44,6 @@ namespace Data
 		Empty,
 		CremeFraiche,
 		Oignon,
-		Diable,
-		Mariniaire,
-		Provencale
+		Mariniaire
 	}
 }

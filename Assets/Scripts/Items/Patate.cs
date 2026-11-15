@@ -11,6 +11,8 @@ namespace Item
     {
         [SerializeField] private Transform _rayStart;
 
+        public float scoreBonus;
+
         private void Start()
         {
             SetNewCuissonState(AlimentCuisson.PasCoupé);
@@ -51,6 +53,7 @@ namespace Item
                 if (hit.transform.TryGetComponent(out Barquette b))
                 {
                     b.AddProduitToCommande(Produit.Frite);
+                    b.AddBonusScoreCommande(scoreBonus);
                     Destroy(gameObject);
                 }
             }

@@ -26,8 +26,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142926886271676139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.218}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6443667851207883660}
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.015, y: 0.3207}
+  m_AnchoredPosition: {x: 0, y: 0.41}
   m_SizeDelta: {x: 50, y: 23.0655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4236954306439215866
@@ -189,7 +189,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.0925856, y: 1.9849999, z: 3.360958}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6583077282889429795}
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item.Cocote
   _marmiteParticles: {fileID: 2812615294546701905}
   _throwForce: 10
+  _angle: 0
   _maxCuissonTime: 3
   _percentIsCuit: 0.8
   _percentIsCuitImage: {fileID: 7758561297794397991}
@@ -235,8 +236,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.28649938, y: 0.29956207, z: 0.47311538}
-  m_Center: {x: -0.004163762, y: 0.12248123, z: -0.07074448}
+  m_Size: {x: 0.33134633, y: 0.2995621, z: 0.36587715}
+  m_Center: {x: 0.000000022351742, y: 0.12248123, z: -0.0020360947}
 --- !u!1 &6911614556562838780
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +531,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Cocotte
       objectReference: {fileID: 0}
+    - target: {fileID: 1621985642534374410, guid: 98d4bfc4e36fae640b57d360f72fad4f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 33cb2de8152ecb041ab7ff5ec68edbea, type: 2}
+    - target: {fileID: 2359627732611733945, guid: 98d4bfc4e36fae640b57d360f72fad4f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 33cb2de8152ecb041ab7ff5ec68edbea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

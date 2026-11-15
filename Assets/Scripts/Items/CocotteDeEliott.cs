@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Item.Interfaces;
 using MyPrint;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -17,6 +18,7 @@ namespace Item
         
         [Header("End Cuisson")]
         [SerializeField] private float _throwForce;
+        [SerializeField] private float _angle = 10;
 
         [Header("Timer")] 
         [SerializeField] private float _maxCuissonTime = 3f;
@@ -74,7 +76,8 @@ namespace Item
             {
                 Rigidbody rb = _mouleDansLaMarmite.GetComponent<Rigidbody>();
                 
-                float x = Random.Range(-5f, 5f);
+                float r = Random.Range(0, 100);
+                float x = r > 50 ? -_angle : _angle;
                 
                 rb.AddRelativeForce(Vector3.up * _throwForce + Vector3.right * x, ForceMode.Impulse);
                 rb.AddTorque(Vector3.forward * 50, ForceMode.Impulse);
